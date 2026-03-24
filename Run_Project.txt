@@ -1,0 +1,51 @@
+# How to run the Attendance Notice Generation System
+
+This project is divided into two parts: a React/Vite frontend and a Node/Express backend.
+You must run both servers simultaneously for the application to work.
+
+---
+
+### Step 1: Start the Backend Server
+The backend handles parsing the Excel file, generating PDF notices, and sending emails.
+
+1. Open a new terminal.
+2. Navigate to the server folder:
+   cd server
+3. Install dependencies (only needed the first time):
+   npm install
+4. Start the backend:
+   npm run dev
+
+The backend will start on http://localhost:5001
+
+---
+
+### Step 2: Start the Frontend Application
+The frontend is the React UI where you upload files and view the notices.
+
+1. Open a second (new) terminal window.
+2. Navigate to the main project folder (the one containing this text file):
+   cd "College_Automation" (or your main folder name)
+3. Install dependencies (only needed the first time):
+   npm install
+4. Start the Vite server:
+   npm run dev
+
+The frontend will start on http://localhost:5173
+
+---
+
+### Step 3: Use the Application
+1. Open your browser and go to http://localhost:5173
+2. Drag and drop the `Attendance_Report_37.xlsx` file into the upload zone.
+3. Click "Upload and Generate Notices".
+4. After processing, you can download the PDF notices or send them via email.
+
+---
+
+### Step 4: Configure Email Service (Optional)
+To use the "Send Mail" feature, you need to configure a Gmail account.
+1. Open the file `server/.env`
+2. Enter your Gmail address in `EMAIL_USER`.
+3. Create a 16-character Google App Password (search "App passwords" in your Google Account Security settings) and enter it in `EMAIL_PASS`.
+4. Restart the backend server for the new credentials to take effect.
